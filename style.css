@@ -1,0 +1,147 @@
+/* GLOBAL */
+body {
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+    color: white;
+}
+
+/* BACKGROUND THEMES */
+.default-bg {
+    background: linear-gradient(to bottom, #4facfe, #00f2fe);
+}
+
+.sunny-bg {
+    background: linear-gradient(to bottom, #f6d365, #fda085);
+}
+
+.rainy-bg {
+    background: linear-gradient(to bottom, #4b79a1, #283e51);
+}
+
+.cloudy-bg {
+    background: linear-gradient(to bottom, #d7d2cc, #304352);
+}
+
+/* HEADER */
+.abhiHeader {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+/* SEARCH SECTION */
+.abhiSearchBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.searchInput {
+    width: 90%;
+    max-width: 350px;
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.abhi5,
+.abhi6,
+.abhi11,
+.abhi8 {
+    padding: 10px 20px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    margin-top: 8px;
+}
+
+/* Buttons Colors */
+.abhi5 {
+    background-color: #2563eb;
+}
+
+/* Blue */
+.abhi6 {
+    background-color: #16a34a;
+}
+
+/* Green */
+.abhi11 {
+    background-color: #facc15;
+    color: black;
+}
+
+/* Yellow */
+.abhi8 {
+    background-color: #9333ea;
+}
+
+/* Purple */
+
+/* ERROR BOX */
+.errorBox {
+    background-color: #dc2626;
+    padding: 12px;
+    border-radius: 12px;
+    margin-top: 15px;
+    text-align: center;
+    display: none;
+}
+
+/* CURRENT WEATHER BOX */
+.abhi13 {
+    background-color: white;
+    color: black;
+    padding: 20px;
+    border-radius: 18px;
+    display: none;
+}
+
+.abhi14 {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.abhi15 {
+    font-size: 46px;
+    font-weight: 700;
+}
+
+.abhi17 {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+/* FORECAST SECTION */
+.abhiForecastTitle {
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.abhi22 {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+/* FOOTER */
+.abhi23 {
+    opacity: 0.8;
+}
+
+
+/* Responsive Improvements */
+@media (max-width: 600px) {
+    .abhiSearchBox {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .abhi17 {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
