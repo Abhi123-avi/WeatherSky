@@ -1,5 +1,5 @@
 // ================================
-// BASIC DOM SELECTORS
+// BASIC DOM SELECTORS (Select all required DOM elements from HTML)
 // ================================
 const inputBox = document.querySelector(".searchInput");
 const searchBtn = document.querySelector(".searchBtn");
@@ -20,22 +20,32 @@ const toggleTempBtn = document.querySelector(".toggleTemp");
 const recentBtn = document.querySelector(".recentBtn");
 const recentDropdown = document.querySelector(".recentDropdown");
 
+
+
 // ================================
-// YOUR API KEY
+// YOUR API KEY (OpenWeatherMap API Key used to authenticate API requests)
 // ================================
 const API_KEY = "fd4231a8a7977d18b9e6e2ae19084103";
 
+
+
 // ================================
 // STATE VARIABLES
+// isCelsius -> tracks current temperature unit
+// recentCities -> stores last searched cities
+// originalTemp -> stores original Celsius value for accurate conversion
 // ================================
+
 let isCelsius = true;
 let recentCities = [];
 let originalTemp = 0;
+
 
 // Load cities from storage at start
 if (localStorage.getItem("recentCities")) {
     recentCities = JSON.parse(localStorage.getItem("recentCities"));
 }
+
 
 // ================================
 // SHOW ERROR MESSAGE
@@ -49,9 +59,12 @@ function showError(msg) {
     }, 3000);
 }
 
+
 // ================================
 // FETCH WEATHER BY CITY
 // ================================
+
+// Fetches weather data using city name entered by user
 function getWeatherByCity(city) {
 
     if (city.trim() === "") {
@@ -81,9 +94,13 @@ function getWeatherByCity(city) {
         .catch(() => showError("Network issue. Try again."));
 }
 
+
+
 // ================================
 // FETCH WEATHER BY LOCATION
 // ================================
+
+// Fetches weather data using user's current GPS location
 function getWeatherByLocation() {
 
     if (!navigator.geolocation) {
@@ -110,6 +127,8 @@ function getWeatherByLocation() {
     );
 }
 
+
+
 // ================================
 // UPDATE CURRENT WEATHER UI
 // ================================
@@ -118,7 +137,9 @@ function updateCurrentWeather(data) {
     currentWeatherBox.style.display = "block";
 
     cityNameEl.innerHTML = data.name;
+    // Store original Celsius temperature for toggle feature
     originalTemp = data.main.temp;
+
     tempEl.innerHTML = originalTemp + "°C";
     descEl.innerHTML = data.weather[0].description;
     humidityEl.innerHTML = "Humidity: " + data.main.humidity + "%";
@@ -235,9 +256,13 @@ recentBtn.addEventListener("click", () => {
     recentDropdown.classList.toggle("hidden");
 });
 
+
+
 // ================================
 // TEMPERATURE TOGGLE
 // ================================
+
+// Toggle temperature between Celsius and Fahrenheit (only current weather)
 toggleTempBtn.addEventListener("click", () => {
 
     if (isCelsius) {
