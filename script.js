@@ -64,8 +64,8 @@ function getWeatherByCity(city) {
     fetch(url)
         .then(res => res.json())
         .then(data => {
-            if (data.cod === "404") {
-                showError("City not found. Try another.");
+            if (data.cod !== 200) {
+                showError("Unable to fetch weather data. Please check the city name.");
                 return;
             }
 
@@ -260,3 +260,12 @@ searchBtn.addEventListener("click", () => {
 });
 
 locationBtn.addEventListener("click", getWeatherByLocation);
+
+
+// Adding Enter Key for improving city search user experience
+
+inputBox.addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+        getWeatherByCity(inputBox.value);
+    }
+});
