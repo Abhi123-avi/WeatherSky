@@ -145,3 +145,36 @@ body {
         gap: 8px;
     }
 }
+
+.abhiCityItem {
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.abhiCityItem:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+}
+
+/* Dropdown container styling */
+.recentDropdown {
+    margin-top: 10px;
+
+    color: black;
+    border-radius: 12px;
+    padding: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.abhi5:hover,
+.abhi6:hover,
+.abhi11:hover,
+.abhi8:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
