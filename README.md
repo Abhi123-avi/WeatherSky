@@ -34,6 +34,7 @@ using the OpenWeatherMap API.
 ## How to Run the Project
 
 1. Download or clone the repository.
+  (https://github.com/Abhi123-avi/WeatherSky.git)
 2. Open `index.html` in your browser.
 3. Enter a city name or click "Use Location".
 4. Enjoy the live weather forecast.
