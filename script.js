@@ -195,19 +195,33 @@ function displayForecast(list) {
 
         const item = list[i];
 
-        // Creating card (same style you use)
+        // Creating card 
         const card = document.createElement("div");
-        card.classList.add("abhiCard");
+
+        // Add Tailwind classes for better design
+        card.className =
+            "bg-white text-black p-6 rounded-2xl shadow-md " +
+            "transition duration-300 hover:shadow-2xl hover:-translate-y-1 " +
+            "flex flex-col items-center text-center";
 
         const date = new Date(item.dt_txt).toDateString();
 
         card.innerHTML = `
-            <h3>${date}</h3>
-            <img src="http://openweathermap.org/img/wn/${item.weather[0].icon}.png" />
-            <p>Temp: ${item.main.temp}°C</p>
-            <p>Wind: ${item.wind.speed} m/s</p>
-            <p>Humidity: ${item.main.humidity}%</p>
-        `;
+    <h3 class="font-bold text-lg mb-3">${date}</h3>
+
+    <img 
+        class="w-28 h-228 mb-4 drop-shadow-xl"
+        src="http://openweathermap.org/img/wn/${item.weather[0].icon}@4x.png"
+        alt="weather icon"
+    />
+
+    <p class="text-xl font-semibold mb-1">
+        ${item.main.temp}°C
+    </p>
+
+    <p class="text-sm">Wind: ${item.wind.speed} m/s</p>
+    <p class="text-sm">Humidity: ${item.main.humidity}%</p>
+`;
 
         forecastContainer.appendChild(card);
     }
