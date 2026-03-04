@@ -191,7 +191,7 @@ function displayForecast(list) {
 
     forecastContainer.innerHTML = "";
 
-    for (let i = 0; i < list.length; i += 8) {
+    for (let i = 8; i < list.length; i += 8) {
 
         const item = list[i];
 
@@ -308,3 +308,4 @@ inputBox.addEventListener("keypress", function (event) {
         getWeatherByCity(inputBox.value);
     }
 });
+
